@@ -7,7 +7,7 @@
 }
 
 .theme-nav {
-    font-family: Gotham;
+    font-family: Montserrat;
     font-weight: 400;
     font-size: 18px;
     text-transform: none;
@@ -15,7 +15,7 @@
 }
 
 .theme-head {
-    font-family: 'Gotham Bold';
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
@@ -34,7 +34,7 @@
 }
 
 .theme-list {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-weight: 325;
     font-size: 26px;
     line-height: 36px;
@@ -43,7 +43,7 @@
 }
 
 .theme-h4 {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: italic;
     font-weight: 500;
     font-size: 20px;
@@ -55,9 +55,9 @@
 .theme-btn {
     background: #2D3BD5;
     border-radius: 10px;
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 24px;
 
@@ -75,9 +75,9 @@
 }
 
 .theme-h3 {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 26px;
     text-align: center;
@@ -85,7 +85,7 @@
 }
 
 .theme-form .form-control {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -114,7 +114,7 @@
 
 .head-title {
     /* Unlock home equity */
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
@@ -130,7 +130,7 @@
 }
 
 .feature-block .description {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 325;
     font-size: 20px;
@@ -146,9 +146,9 @@
 }
 
 .theme-subhead {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
     line-height: 29px;
     color: #4B5BE8;
@@ -176,9 +176,9 @@
 }
 
 .theme-card h2 {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
     line-height: 29px;
     color: #000000;
@@ -186,7 +186,7 @@
 }
 
 .theme-card p {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -203,9 +203,9 @@
 }
 
 .eligibility-form .form-group label {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     line-height: 22px;
 
@@ -217,9 +217,9 @@
 }
 
 .step-card h1 {
-    font-family: 'Gotham Bold';
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 54px;
     line-height: 54px;
 
@@ -228,9 +228,9 @@
 }
 
 .step-card h2 {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 25px;
     line-height: 34px;
 
@@ -239,7 +239,7 @@
 }
 
 .step-card p {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -253,9 +253,9 @@
     background-color: #fff;
     width: 100%;
     text-align: left;
-    font-family: 'Gotham Bold';
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 23px;
 
@@ -283,9 +283,9 @@
     padding: 1em;
     background-color: #FAFAFF;
     border-radius: 1em;
-    font-family: gotham;
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.8);
     border-left: 0px solid;
@@ -302,7 +302,7 @@
 }
 
 .faq-description {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -327,7 +327,7 @@
 }
 
 .footer-link {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -349,12 +349,13 @@
 
 @media only screen and (max-width:767px) {
     .theme-head {
-        font-size: 36px;
-        line-height: 47px;
+        font-size: 32px;
+        line-height: 36px;
     }
 
     .theme-list {
         font-size: 20px;
+        text-align: center;
     }
 
     .navbar-collapse {
@@ -364,7 +365,7 @@
 }
 
 .cta {
-    font-family: 'Gotham';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -384,4 +385,47 @@
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+}
+
+@media only screen and (max-width:767px) {
+    .masthead ul {
+        padding-left: 0;
+    }
+
+    .masthead .theme-h4 {
+        margin-bottom: 28px !important;
+        text-align: center;
+    }
+
+    .masthead .theme-form {
+        margin-top: 2em;
+    }
+
+    .page-section {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    .masthead .theme-head {
+        text-align: center;
+    }
+}
+
+.masthead .col-lg-7 {
+}
+
+@media only screen and (max-width:767px) {
+    .masthead .col-lg-7 {
+    }
+
+    .masthead .theme-btn {
+        width: 100%;
+    }
+
+    .eligibility-form {
+        margin-left: 0em;
+    }
+
+    .footer {
+    }
 }
