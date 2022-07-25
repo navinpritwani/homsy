@@ -8298,6 +8298,7 @@ fieldset:disabled .btn {
 
 .mb-4 {
     margin-bottom: 1.5rem !important;
+    list-style-type: disc;
 }
 
 .mb-5 {
