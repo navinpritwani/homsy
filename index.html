@@ -7,7 +7,7 @@
         <meta name="author" content=""/>
         <title>Homsy</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png"/>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -32,10 +32,10 @@
                             <li class="theme-list">No credit requirements</li>
                         </ul>
                         <h4 class="theme-h4 mb-5">Certified by the Government of India</h4>
-                        <button type="button" class="btn btn-primary theme-btn">Schedule a call</button>
+                        <a class="btn btn-primary theme-btn" href="https://calendly.com/homsy-india" target="_blank">Schedule a call</a>
                     </div>
                     <div class="col-lg-5 col-12" style="display: flex; justify-content: center;">
-                        <form class="theme-form">
+                        <form class="theme-form" name="submit-to-google-sheet">
                             <h3 class="theme-h3 mb-4">Join 1500+ Indians in our exclusive waitlist</h3>
                             <div class="form-group">
                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name"/>
@@ -321,10 +321,10 @@
                     <div class="col-lg-4 mb-5 mb-lg-0 text-left col-xl-4">
                         <img src="assets/img/logo-white.png" class="mb-4">
                         <br>
-                        <a class="btn mx-1 btn-outline-light" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <a class="btn mx-1 btn-outline-light" href="https://www.facebook.com/homsy.in"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light mx-1" href="https://www.instagram.com/homsy.in/"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light mx-1" href="https://www.linkedin.com/company/homsy"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light mx-1" href="mailto:hello@homsy.in"><i class="fab fa fw fa-envelope"></i></a>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0 col-xl-6">
@@ -379,7 +379,7 @@
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
             <div class="container">
-                <small>Copyright &copy; Your Website 2022</small>
+                <small>Copyright @ Homsy 2022</small>
             </div>
         </div>
         <!-- Portfolio Modals-->
@@ -506,5 +506,21 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+        <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+        <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx7Pq3qGIylzFyNk4osuzYhmIeM6qdRyYPqbu3X2uIeq68GEHBo6MBUixQi5-TKD4or/exec'
+                const form = document.forms['submit-to-google-sheet']
+
+                form.addEventListener('submit', e => {
+                    alert("ok");
+                    e.preventDefault()
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+                })
+
+        </script>
     </body>
 </html>
