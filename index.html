@@ -38,19 +38,19 @@
                         <form class="theme-form" name="submit-to-google-sheet">
                             <h3 class="theme-h3 mb-4">Join 1500+ Indians in our exclusive waitlist</h3>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name"/>
+                                <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Last Name"/>
+                                <input type="text" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name"/>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email ID"/>
+                                <input type="email" name="email_id" class="form-control" aria-describedby="emailHelp" placeholder="Email ID"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number"/>
+                                <input type="text" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="City of Property"/>
+                                <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property"/>
                             </div>
                             <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
                         </form>
@@ -506,18 +506,14 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-        <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-        <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
         <script>
             const scriptURL = 'https://script.google.com/macros/s/AKfycbx7Pq3qGIylzFyNk4osuzYhmIeM6qdRyYPqbu3X2uIeq68GEHBo6MBUixQi5-TKD4or/exec'
                 const form = document.forms['submit-to-google-sheet']
 
                 form.addEventListener('submit', e => {
-                    alert("ok");
                     e.preventDefault()
                     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => console.log('Success!', response))
+                    .then(response => console.log('Success!', response.json()))
                     .catch(error => console.error('Error!', error.message))
                 })
 
