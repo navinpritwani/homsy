@@ -438,3 +438,42 @@
 .theme-bg {
     background-color: #2D3BD5;
 }
+
+.theme-h2 {
+    /* Congratulations! */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 39px;
+
+    /* identical to box height */
+    text-align: center;
+    color: #000000;
+}
+
+.range-value {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #4B5BE8;
+    position: absolute;
+    top: 2em;
+}
+
+.el-list {
+    margin-top: 2em;
+}
+
+.hero-subhead {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+
+    /* or 256% */
+    color: #000000;
+}
