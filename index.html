@@ -10,7 +10,6 @@
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.png"/>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
@@ -26,7 +25,8 @@
             <div class="container align-items-center">
                 <div class="row align-items-center">
                     <div class="col-lg-7 text-left">
-                        <h1 class="theme-head mb-3">Get up to <span class="theme-text-color">₹5Crores</span> trapped in your home</h1>
+                        <h1 class="theme-head mb-4">No <span class="theme-text-color">गिरवी ,</span> Just Homsy</h1>
+                        <h1 class="hero-subhead mb-4">Get up to <span class="theme-text-color">₹5Crores</span> trapped in your homes and lands</h1>
                         <ul class="mb-4">
                             <li class="theme-list">No monthly payments</li>
                             <li class="theme-list">No income criteria</li>
@@ -47,12 +47,16 @@
                             <div class="form-group">
                                 <input type="email" name="email_id" class="form-control" aria-describedby="emailHelp" placeholder="Email ID" required>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required>
+                            <div class="form-group input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">+91</div>
+                                </div>
+                                <input type="tel" pattern=".{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
                             </div>
+                            <div class="success-box text-black-50">Thankyou for Joining. Will get back.</div>
                             <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
                         </form>
                     </div>
@@ -193,14 +197,14 @@
                 <h2 class="mb-0 theme-subhead"><img src="assets/img/line.png"/>Free your trapped capital</h2>
                 <h1 class="theme-head theme-head2 mb-5">See how much money you can access</h1>
                 <div>
-                    <form class="eligibility-form theme-form row w-100">
+                    <form class="w-100 row theme-form eligibility-form" id="eligibility-1">
                         <div class="form-group col-xl-12">
                             <label for="exampleInputEmail1">Home Address</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
+                            <input required type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
                         </div>
                         <div class="form-group float-left col-xl-6 col-lg-6">
                             <label for="exampleInputPassword1">City</label>
-                            <select name="cars" id="cars" form="carform" class="form-control">
+                            <select required name="cars" id="cars" form="carform" class="form-control">
                                 <option value="volvo">Select City</option>
                                 <option value="saab">Saab</option>
                                 <option value="opel">Opel</option>
@@ -209,7 +213,7 @@
                         </div>
                         <div class="form-group float-left col-xl-6 col-lg-6">
                             <label for="exampleInputPassword1">State</label>
-                            <select name="cars" form="carform" class="form-control">
+                            <select required name="cars" form="carform" class="form-control">
                                 <option value="volvo">Select State</option>
                                 <option value="saab">Saab</option>
                                 <option value="opel">Opel</option>
@@ -218,20 +222,67 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                            <input required type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
+                            <input required type="tel" pattern=".{10}" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
-                            <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Home Value" step="1000"/>
+                            <div class="input-group">
+                                <span class="input-group-prepend"> <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                                        <span class="fa fa-minus"></span>
+                                    </button> </span>
+                                <input required type="text" name="quant[1]" class="form-control input-number" value="1000" min="1000" max="100000000">
+                                <span class="input-group-append"> <button type="button" class="btn btn-number btn-outline-secondary" data-type="plus" data-field="quant[1]">
+                                        <span class="fa fa-plus"></span>
+                                    </button> </span>
+                            </div>
                         </div>
                         <div class="form-group col-xl-4 d-flex align-items-end col-lg-5">
                             <button type="submit" class="btn theme-btn btn-primary w-100">Check Eligibility</button>
                         </div>
                     </form>
+                    <div class="eligibility-form theme-form w-100 row" id="eligibility-2">
+                        <div class="col-xl-6 col-lg-6 theme-form">
+                            <h2 class="theme-h2">Congratulations!</h2>
+                            <h4 class="theme-h4 text-center mt-4">You can receive up to</h4>
+                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> 5 Lakhs</h1>
+                            <form class="w-100">
+                                <div class="form-group col-xl-12">
+                                    <label for="exampleInputEmail1" class="mb-5">Select Amount (in Lakhs)</label>
+                                    <input type="range" class="custom-range" min="0" max="5" step="0.5" id="amt-range">
+                                    <span class="range-value" id="amt-range-val">0</span>
+                                </div>
+                                <div class="form-group col-xl-12">
+                                    <label for="exampleInputEmail1" class="mb-5">Select Tenure (in Years)</label>
+                                    <input type="range" class="custom-range" min="0" max="10" step="1" id="ten-range">
+                                    <span class="range-value" id="ten-range-val">0</span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xl-6 theme-form" style="border-right: 0 solid;">
+                            <h2 class="theme-h4 text-center">Payback</h2>
+                            <h4 class="theme-h4 text-center mt-4">After 10 Years</h4>
+                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> 7.2 Lakhs</h1>
+                            <ul class="el-list mb-5">
+                                <li>Appreciation
+                                    <span class="theme-text-color">3.2%</span>
+                                </li>
+                                <li>Final Home Value
+                                    <span><i class="fa fa-inr"></i> 21.6L</span>
+                                </li>
+                                <li>Your Share
+                                    <span><i class="fa fa-inr"></i> 14.4L</span>
+                                </li>
+                                <li>Homsy Share
+                                    <span><i class="fa fa-inr"></i> 7.2L</span>
+                                </li>
+                            </ul>
+                            <button class="btn theme-btn btn-primary w-100">Apply for funds</button>
+                        </div>
+                    </div>
                 </div>
                 <!-- About Section Button-->
             </div>
@@ -275,7 +326,7 @@
                 <div id="basic" class="collapse show">
                     <ul>
                         <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic1">
-                            Do I own the house/Decision making? 
+                            So what exactly does Homsy do?
                             <img src="assets/img/dashicons_arrow-down-alt2.png">
                         </li>
                         <div id="basic1" class="collapse show faq-description">Homsy is a way for homeowners to be paid today for equity they’ve accumulated in their property — without getting a loan. We invest alongside homeowners, providing cash today in exchange for a share in the home’s future value. Homeowners can settle the Investment any time within 10 years.</div>
@@ -508,14 +559,129 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbx7Pq3qGIylzFyNk4osuzYhmIeM6qdRyYPqbu3X2uIeq68GEHBo6MBUixQi5-TKD4or/exec'
+                                $('.btn-number').click(function(e){
+                        e.preventDefault();
+                        
+                        fieldName = $(this).attr('data-field');
+                        type      = $(this).attr('data-type');
+                        var input = $("input[name='"+fieldName+"']");
+                        var currentVal = parseInt(input.val());
+                        if (!isNaN(currentVal)) {
+                            if(type == 'minus') {
+                                
+                                if(currentVal > input.attr('min')) {
+                                    input.val(currentVal - 1000).change();
+                                } 
+                                if(parseInt(input.val()) == input.attr('min')) {
+                                    $(this).attr('disabled', true);
+                                }
+
+                            } else if(type == 'plus') {
+
+                                if(currentVal < input.attr('max')) {
+                                    input.val(currentVal + 1000).change();
+                                }
+                                if(parseInt(input.val()) == input.attr('max')) {
+                                    $(this).attr('disabled', true);
+                                }
+
+                            }
+                        } else {
+                            input.val(0);
+                        }
+                    });
+                    $('.input-number').focusin(function(){
+                    $(this).data('oldValue', $(this).val());
+                    });
+                    $('.input-number').change(function() {
+                        
+                        minValue =  parseInt($(this).attr('min'));
+                        maxValue =  parseInt($(this).attr('max'));
+                        valueCurrent = parseInt($(this).val());
+                        
+                        name = $(this).attr('name');
+                        if(valueCurrent >= minValue) {
+                            $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+                        } else {
+                            alert('Sorry, the minimum value was reached');
+                            $(this).val($(this).data('oldValue'));
+                        }
+                        if(valueCurrent <= maxValue) {
+                            $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+                        } else {
+                            alert('Sorry, the maximum value was reached');
+                            $(this).val($(this).data('oldValue'));
+                        }
+                    });
+
+                    $(".input-number").keydown(function (e) {
+                        // Allow: backspace, delete, tab, escape, enter and .
+                        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+                            // Allow: Ctrl+A
+                            (e.keyCode == 65 && e.ctrlKey === true) || 
+                            // Allow: home, end, left, right
+                            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                                // let it happen, don't do anything
+                                return;
+                        }
+                        // Ensure that it is a number and stop the keypress
+                        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                            e.preventDefault();
+                        }
+                    });
+
+                    const eligibility_form = document.forms['eligibility-1']
+                    eligibility_form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    $('#eligibility-1').css('display', 'none');
+                    
+                    setTimeout( function() { 
+                        $('#eligibility-2').css('display', 'flex');
+                                }, 300);
+                    e.target.reset();
+                    
+                })
+
+                var slider = document.getElementById("amt-range");
+                var output = document.getElementById("amt-range-val");
+                output.innerHTML = slider.value + 'L';
+                output.style.left = (slider.value/5)*100 + '%';
+
+                slider.oninput = function() {
+                output.innerHTML = this.value + 'L';
+                output.style.left = (this.value/5)*100 + '%';
+                }
+
+                var slider2 = document.getElementById("ten-range");
+                var output2 = document.getElementById("ten-range-val");
+                output2.innerHTML = slider2.value + 'Y';
+                output2.style.left = (slider2.value/10)*100 + '%';
+
+                slider2.oninput = function() {
+                output2.innerHTML = this.value + 'Y';
+                output2.style.left = (this.value/10)*100 + '%';
+                }
+
+        </script>
+        <script>
+            success = function() {
+                                $('.success-box').css('display', 'block');
+                                setTimeout( function() { 
+                                    $('.success-box').css('display', 'none');
+                                }, 4000);
+                            }
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbx7Pq3qGIylzFyNk4osuzYhmIeM6qdRyYPqbu3X2uIeq68GEHBo6MBUixQi5-TKD4or/exec'
                 const form = document.forms['submit-to-google-sheet']
+
 
                 form.addEventListener('submit', e => {
                     e.preventDefault()
                     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                    .then(response => console.log('Success!', response.json()))
+                    .then(response => console.log('Success!', response.json()),
+                            success()    
+                        )
                     .catch(error => console.error('Error!', error.message))
+                    e.target.reset();
                 })
 
         </script>

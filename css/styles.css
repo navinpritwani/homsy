@@ -12478,3 +12478,49 @@ html {
 .copyright {
     background-color: #283aa6;
 }
+
+.success-box {
+    padding: 1em;
+    background-color: #a8ef84;
+    border-radius: 8px;
+    display: none;
+}
+
+.btn-number {
+    background-color: #3042d2 !important;
+    color: #fff !important;
+}
+
+#eligibility-2 {
+    display: none;
+}
+
+#eligibility-2.theme-form {
+}
+
+#eligibility-2 .theme-form {
+    border-right: 1px solid rgba(0, 0, 0, 0.19);
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+#eligibility-2 .theme-h4 {
+    font-style: normal;
+}
+
+.el-list li {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+
+    /* identical to box height */
+    color: #000000;
+    padding-bottom: 0.5em;
+}
+
+.el-list li span {
+    float: right;
+    opacity: 0.7;
+}
