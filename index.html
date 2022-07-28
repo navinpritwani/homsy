@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="text-center col-xl-12 col-lg-12 mt-4">
-                        <a href="" class="cta">Learn More <i class="arrow right"></i></a>
+                        <a href="#faq" class="cta">Learn More <i class="arrow right"></i></a>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5 text-center">
-                        <button type="button" class="btn btn-primary theme-btn">Apply for Exclusive Invite</button>
+                        <a class="btn btn-primary theme-btn" href="#page-top">Apply for Exclusive Invite</a>
                     </div>
                     <!-- Portfolio Item 2-->
                     <!-- Portfolio Item 3-->
@@ -198,15 +198,14 @@
                 <h2 class="mb-0 theme-subhead"><img src="assets/img/line.png"/>Free your trapped capital</h2>
                 <h1 class="theme-head theme-head2 mb-5">See how much money you can access</h1>
                 <div>
-                    <form class="w-100 row theme-form eligibility-form" id="eligibility-1">
+                    <form class="w-100 row theme-form eligibility-form" id="eligibility-1" onsubmit="submitForm(this)">
                         <div class="form-group col-xl-6">
                             <label for="exampleInputEmail1">Home Address</label>
-                            <input required type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
+                            <input required name="address" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
                         </div>
                         <div class="form-group float-left col-lg-6 col-xl-6">
                             <label for="exampleInputPassword1">City</label>
-                            <select required name="cars" id="cars" form="carform" class="form-control">
-                                <option value="NA">Select City</option>
+                            <select required name="city" id="cars" form="carform" class="form-control" placeholder="select city">
                                 <option value="	Agra	">	Agra	</option>
                                 <option value="	Ahmedabad	">	Ahmedabad	</option>
                                 <option value="	Bengaluru	">	Bengaluru	</option>
@@ -230,11 +229,11 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter Email address"/>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input required type="tel" pattern=".{10}" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
+                            <input required type="tel" pattern=".{10}" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
@@ -242,7 +241,7 @@
                                 <span class="input-group-prepend"> <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
                                         <span class="fa fa-minus"></span>
                                     </button> </span>
-                                <input required type="text" name="quant[1]" class="form-control input-number" value="1000" min="1000" max="100000000">
+                                <input required type="text" name="quant[1]" class="form-control input-number" value="2500000" min="2500000" max="50000000">
                                 <span class="input-group-append"> <button type="button" class="btn btn-number btn-outline-secondary" data-type="plus" data-field="quant[1]">
                                         <span class="fa fa-plus"></span>
                                     </button> </span>
@@ -256,36 +255,36 @@
                         <div class="col-xl-6 col-lg-6 theme-form">
                             <h2 class="theme-h2">Congratulations!</h2>
                             <h4 class="theme-h4 text-center mt-4">You can receive up to</h4>
-                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> 5 Lakhs</h1>
+                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i><span id="e_amt"></span></h1>
                             <form class="w-100">
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Amount (in Lakhs)</label>
-                                    <input type="range" class="custom-range" min="0" max="5" step="0.5" id="amt-range">
+                                    <input type="range" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
                                     <span class="range-value" id="amt-range-val">0</span>
                                 </div>
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Tenure (in Years)</label>
-                                    <input type="range" class="custom-range" min="0" max="10" step="1" id="ten-range">
+                                    <input type="range" class="custom-range" min="0" max="10" step="1" id="ten-range" value="1">
                                     <span class="range-value" id="ten-range-val">0</span>
                                 </div>
                             </form>
                         </div>
                         <div class="col-xl-6 theme-form" style="border-right: 0 solid;">
                             <h2 class="theme-h4 text-center">Payback</h2>
-                            <h4 class="theme-h4 text-center mt-4">After 10 Years</h4>
-                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> 7.2 Lakhs</h1>
+                            <h4 class="theme-h4 text-center mt-4">After <span id="tenure"></span> Years</h4>
+                            <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> <span id="payback_amt"></span></h1>
                             <ul class="el-list mb-5">
                                 <li>Appreciation
                                     <span class="theme-text-color">3.2%</span>
                                 </li>
                                 <li>Final Home Value
-                                    <span><i class="fa fa-inr"></i> 21.6L</span>
+                                    <span><i class="fa fa-inr"></i> <span id="finalHomeValue"></span></span>
                                 </li>
                                 <li>Your Share
-                                    <span><i class="fa fa-inr"></i> 14.4L</span>
+                                    <span><i class="fa fa-inr"></i> <span id="ownerShare"></span> </span>
                                 </li>
                                 <li>Homsy Share
-                                    <span><i class="fa fa-inr"></i> 7.2L</span>
+                                    <span><i class="fa fa-inr"></i> <span id="homsyShare"></span></span>
                                 </li>
                             </ul>
                             <button class="btn theme-btn btn-primary w-100">Apply for funds</button>
@@ -339,6 +338,228 @@
                         </li>
                         <div id="basic1" class="collapse show">
                             <div class="faq-description">  Homsy is a way for homeowners to be paid today for equity they’ve accumulated in their property — without getting a loan. We invest alongside homeowners, providing cash today in exchange for a share in the home’s future value. Homeowners can settle the Investment any time within 10 years.</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic2">
+                            What's the difference between Homsy and a loan?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic2" class="collapse ">
+                            <div class="faq-description"> Unlike a lender, we receive no monthly payments or guaranteed return on the money we’ve invested. For some, taking an equity investment can be an intelligent way to fund the opportunities and needs that come up in life while eliminating the “debt stress” of increased monthly payments.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic3">
+                            Who can use Homsy?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic3" class="collapse ">
+                            <div class="faq-description">
+                                <b>Unlock home equity</b>
+                                <br>
+                                Trade a portion of your home equity for cash, then use your funds how you want – from paying debt to funding retirement.&nbsp; 
+                                <br>
+                                <b>Live your life</b>
+                                <br>
+                                Create years of memories in your home, without monthly payments. Homsy is your partner, here when you need us.&nbsp; 
+                                <br>
+                                <b>Share the appreciation</b>
+                                <br>
+                                When it’s time to sell, we’ll share in the change in your home’s value. We win when you win.
+                            </div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic4">
+                            What is the process for getting a Homsy Investment?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic4" class="collapse ">
+                            <div class="faq-description">Getting a Homsy Investment is done in a few simple steps:
+                                <br>
+                                <b>1. Complete an Investment Inquiry</b>
+                                <br>
+                                Create an account and submit an Investment Inquiry through the Homsy website
+                                <br>
+                                <b>2. Speak with your Investment Manager</b>
+                                <br>
+                                If we think an Investment might be possible, we’ll send you an Investment Estimate, which includes estimated terms specific to your property. Your Homsy Investment Manager will set up a call with you to walk through the numbers and answer any questions you may have about the Application process.
+                                <br>
+                                <b>3. Submit your Application</b>
+                                <br>
+                                Once you’ve uploaded or scanned your documents to your computer, grab a cup of coffee and get started – this Application shouldn’t take more than 20 minutes.
+                                <br>
+                                <b>4. Signing</b>
+                                <br>
+                                Before we can prepare the final Investment Details, we’ll schedule a physical appraisal of your property using a third-party appraiser. Once the appraisal is complete and the Investment Details are finalised, we can sign the documents and begin the transfer of funds!
+                            </div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic5">
+                            How long do I have to settle a Homsy Investment?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic5" class="collapse ">
+                            <div class="faq-description">  The effective period of a Homsy Investment is 10 years. You can either buy out our Investment with savings, take out a home equity (or other) loan, or sell your house during the effective period. We call this settling the Investment.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic6">
+                            In what cities is a Homsy Investment available?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic6" class="collapse ">
+                            <div class="faq-description">  Agra ,
+                                Ahmedabad ,
+                                Bengaluru ,
+                                Gurgaon ,
+                                Hyderabad ,
+                                Indore ,
+                                Jodhpur ,
+                                Kochi ,
+                                Meerut ,
+                                Mumbai ,
+                                Mysore ,
+                                Nagpur ,
+                                Pune ,
+                                Raipur ,
+                                Rajkot ,
+                                Sonipat ,
+                                Surat ,
+                                Trichy ,
+                                Vishakhapatnam
+</div>
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic7">
+                            If I don’t have to guarantee Homsy payments, how does Homsy make money?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic7" class="collapse">
+                            <div class="faq-description">  Homsy has the potential to make money through the Homsy Share — the percentage of the home’s value we are entitled to receive when you sell your home, refinance, or buy us out by the end of the effective period. So, if your home value goes up, we make more and if it goes down, we make less.
+</div>
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#basic8">
+                            When am I expected to pay fees and when do I receive my Investment?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="basic8" class="collapse">
+                            <div class="faq-description">  You’ll typically receive your Investment amount within four to seven business days of signing the Investment agreement, through the escrow you choose. If your funds are delayed, here are some common reasons why. The signing costs are deducted from the Investment total, so you have no out-of-pocket costs. There is no payment to be made until you sell the home or settle the Investment (which you can do at any point during the 10-year period).
+</div>
+                        </div>
+                    </ul>
+                </div>
+                <button type="button" class="btn faq-head" data-toggle="collapse" data-target="#investment" onclick="toggleArrow()" id="FaqHead">
+                    AFTER THE INVESTMENT
+                    <img src="assets/img/dashicons_arrow-down-alt2.png">
+                </button>
+                <div id="investment" class="collapse">
+                    <ul>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest1">
+                            Will Homsy have a say in what I do with the house after the Investment?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest1" class="collapse show">
+                            <div class="faq-description">  Provided that you take care of your house and pay your taxes, mortgage, and insurance — no. You do need to loop us in if you would like to sell your home, take on another investor, or adjust your mortgage.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest2">
+                            Will Homsy be responsible for any expenses like taxes or insurance or if an act-of-God tree falls on my house?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest2" class="collapse ">
+                            <div class="faq-description"> No. We don’t live in your house, tell you what wallpaper to choose, or come for holidays, either. Unless you invite us.
+                                During the effective period of a Homsy Investment (10 years), you are responsible for maintaining your home, making timely mortgage, insurance, and property tax payments, as well as informing us if and when you plan to sell your home. During this time, you do not owe any payments to Homsy and the Investment does not accrue any interest.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest3">
+                            What if I want to renovate or paint the house purple? Do I have to tell Homsy?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest3" class="collapse ">
+                            <div class="faq-description">
+                                No, we’re not involved in any renovation decisions and we don’t share in any of the home value attributable to renovations, as determined by an appraiser.
+                                So, if you’re renovating to make your life better, excellent! If you’re renovating in the hopes of increasing the value of your home, just do your homework. Some renovations add more value than others; some don’t pay for themselves at all.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest4">
+                            Do you offer renovation adjustments?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest4" class="collapse ">
+                            <div class="faq-description">Yes, we do. You may request an adjustment to the agreed home value to account for any appreciation in the value of the property as a result of certain qualified renovations amounting to $25,000 or more. Here’s how it works: the homeowner provides us with evidence of the renovation, including receipts and photographs, within 90 days of its completion. The amount of a renovation adjustment, if approved by Homsy, will be the difference, as determined by an appraiser, between the appraised value of the property post-renovation and the hypothetical value of the property without the renovations. Accepted renovation adjustments are not guaranteed
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest5">
+                            After an Investment, does Homsy conduct random inspections?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest5" class="collapse ">
+                            <div class="faq-description">  No. Assuming you are doing the things a responsible homeowner does (like paying your taxes, mortgage and insurance, and maintaining your home), we will not be popping by for a visit.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#invest6">
+                            If I want to take out more equity from my home after my first Investment, is that a possibility?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest6" class="collapse ">
+                            <div class="faq-description">  It is! We often work with homeowners who have additional funding needs after they’ve received their first Investment. As long as you meet our approval criteria, you may be able to access more equity from your home — we call this an “Investment Increase.”
+                                <br>
+                                To find out if you’re eligible for an Investment Increase and begin the process, simply reach out to your Investment Manager and they’ll be happy to help.
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <button type="button" class="btn faq-head" data-toggle="collapse" data-target="#settling" onclick="toggleArrow()" id="FaqHead">
+                    SETTLING THE INVESTMENT
+                    <img src="assets/img/dashicons_arrow-down-alt2.png">
+                </button>
+                <div id="settling" class="collapse">
+                    <ul>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle1">
+                            What if I want to sell my house before the effective period is up?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="settle1" class="collapse show">
+                            <div class="faq-description">  No problem – it’s totally up to you; just loop us in. Homsy will receive the Homsy share from the proceeds of the sale.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle2">
+                            What happens if I don’t sell the home by the end of the effective period and want to keep it or pass it on to my kids? What do I owe Homsy?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="settle2" class="collapse ">
+                            <div class="faq-description"> If you don’t want to sell your house during the effective period, you can settle the Investment with savings or by taking out a home equity (or other) loan. Any settlement is based on the current market value of the home.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle3">
+                            What happens if the value of my home goes down?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="invest3" class="collapse ">
+                            <div class="faq-description">
+                                In exchange for our upfront cash Investment, Homsy receives a share of the sale or market price of the home. If the value doesn’t go up and we make less, we make less. That’s the risk we take, and that’s for Homsy to worry about, not you.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle4">
+                            What happens if my house burns down?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="settle4" class="collapse ">
+                            <div class="faq-description">That would be awful and we hope that never happens. If the property can be repaired and restored to its condition before the disaster, then great and that’s the plan. If it cannot be repaired and restored, Homsy will use an appraiser to determine the value of the property before the disaster and Homsy will receive the Homsy share from the insurance proceeds, in the same way as if you had sold the property.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle5">
+                            Are you involved in the process when I’m ready to sell my home?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="settle5" class="collapse ">
+                            <div class="faq-description">  You do not need permission from us to sell. When you decide to sell, you are responsible for notifying Homsy:
+                                When you plan to list the house for sale
+                                Within 24 hours of receipt of a binding offer (yay!) and include a copy of the offer
+                                While we will not tell you which offer to accept, the sale price must approximate or exceed the market value of the home. We will work with you to settle the investment as part of the normal signing process; like you, and unlike a bank, we are motivated to get top dollar for any house we have invested in.
+</div>                             
+                        </div>
+                        <li class="faq-subhead" type="button" data-toggle="collapse" data-target="#settle6">
+                            What happens to the Investment if I pass away?
+                            <img src="assets/img/dashicons_arrow-down-alt2.png">
+                        </li>
+                        <div id="settle6" class="collapse ">
+                            <div class="faq-description">  If you are the sole homeowner, the obligation to settle the Investment flows to the estate and the lien remains on the property. If there is a second homeowner and one homeowner passes away, there are no changes to the agreement.
+</div>
                         </div>
                     </ul>
                 </div>
@@ -424,13 +645,13 @@
                         <h4 class="mb-4 theme-h3 text-white text-left">Get in touch</h4>
                         <ul class="p-0">
                             <li class="text-left">
-                                <a href="" class="footer-link">info@homsy.in</a>
+                                <a href="" class="footer-link">hello@homsy.in</a>
                             </li>
                             <li class="text-left">
-                                <a href="" class="footer-link">+91-98 999 9999</a>
+                                <a href="" class="footer-link">+91-80589 56664</a>
                             </li>
                             <li class="text-left">
-                                <a href="" class="footer-link">+91-771 223 99999</a>
+                                <a href="" class="footer-link">+91-99288 33050</a>
                             </li>
                         </ul>
                     </div>
@@ -580,7 +801,7 @@
                             if(type == 'minus') {
                                 
                                 if(currentVal > input.attr('min')) {
-                                    input.val(currentVal - 1000).change();
+                                    input.val(currentVal - 100000).change();
                                 } 
                                 if(parseInt(input.val()) == input.attr('min')) {
                                     $(this).attr('disabled', true);
@@ -589,7 +810,7 @@
                             } else if(type == 'plus') {
 
                                 if(currentVal < input.attr('max')) {
-                                    input.val(currentVal + 1000).change();
+                                    input.val(currentVal + 100000).change();
                                 }
                                 if(parseInt(input.val()) == input.attr('max')) {
                                     $(this).attr('disabled', true);
@@ -654,12 +875,18 @@
 
                 var slider = document.getElementById("amt-range");
                 var output = document.getElementById("amt-range-val");
+                var slider_max = slider.getAttribute("max")
+                var payback_amt = document.getElementById("payback_amt");
                 output.innerHTML = slider.value + 'L';
-                output.style.left = (slider.value/5)*100 + '%';
+                payback_amt.innerHTML = (slider.value * 100000).toLocaleString('en-IN');
+                output.style.left = (slider.value/slider_max)*100 + '%';
+
 
                 slider.oninput = function() {
+                slider_max = slider.getAttribute("max")
                 output.innerHTML = this.value + 'L';
-                output.style.left = (this.value/5)*100 + '%';
+                output.style.left = (this.value/slider_max)*100 + '%';
+                CalHomeVal(this.value * 100000,slider2.value,slider_max);
                 }
 
                 var slider2 = document.getElementById("ten-range");
@@ -669,7 +896,41 @@
 
                 slider2.oninput = function() {
                 output2.innerHTML = this.value + 'Y';
-                output2.style.left = (this.value/10)*100 + '%';
+                output2.style.left = ((this.value/10)*100)-6 + '%';
+                CalHomeVal(slider.value * 100000,this.value,slider_max);
+                }
+
+                function submitForm(that) {
+                    console.log(that[4].value)
+                    var e_amt = (that[4].value)/2.5;
+                    var max_amt = e_amt/100000;
+                    e_amt = e_amt.toLocaleString('en-IN');
+                    document.getElementById("e_amt").innerHTML = ' ' + e_amt;
+                    slider.setAttribute("max",max_amt)
+                }
+
+                CalHomeVal = function(val,ten,max) {
+                    var homeValue = (max * 2.5) * 100000;
+                    var loanAmount = val
+                    var tenure = ten
+                    appreciationRate = 0.032;
+                    var riskAdjustmentDiscount = 0.2
+                    var homsyAppreciationBonus = 0.15
+
+                    var homsyAppreciationPercentage = (loanAmount/homeValue) + homsyAppreciationBonus
+
+                    var finalHomeValue = homeValue * ( Math.pow((1+appreciationRate) , tenure ));
+
+                    var homsyShare = loanAmount + ( homsyAppreciationPercentage * ( finalHomeValue - homeValue*(1-riskAdjustmentDiscount) ))
+                    var ownerShare = finalHomeValue - homsyShare
+
+
+                    var pay_val = Math.trunc(homsyShare) ;
+                    payback_amt.innerHTML = (pay_val.toLocaleString('en-IN'));
+                    document.getElementById("finalHomeValue").innerHTML = ((Math.trunc(finalHomeValue)).toLocaleString('en-IN'))
+                    document.getElementById("homsyShare").innerHTML = (pay_val.toLocaleString('en-IN'))
+                    document.getElementById("ownerShare").innerHTML = ((Math.trunc(ownerShare)).toLocaleString('en-IN'))
+                    document.getElementById("tenure").innerHTML = tenure;
                 }
 
         </script>
