@@ -12,6 +12,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet"/>
@@ -45,7 +46,7 @@
                                 <input type="text" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email_id" class="form-control" aria-describedby="emailHelp" placeholder="Email ID" required>
+                                <input type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email_id" class="form-control" aria-describedby="emailHelp" placeholder="Email ID" required>
                             </div>
                             <div class="form-group input-group">
                                 <div class="input-group-prepend">
@@ -56,7 +57,7 @@
                             <div class="form-group">
                                 <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
                             </div>
-                            <div class="success-box text-black-50">Thankyou for Joining. Will get back.</div>
+                            <div class="success-box text-black-50">Congrats! Your request has been received.</div>
                             <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
                         </form>
                     </div>
@@ -109,7 +110,7 @@
                         <div class="feature-block">
                             <div class="sub-head">FOR NEXT 10 YEARS</div>
                             <div class="head-title">Live your life</div>
-                            <div class="description">Create years of memories in your home, without monthly payments. Unison is your partner, here when you need us.</div>
+                            <div class="description">Create years of memories in your home, without monthly payments. Homsy is your partner, here when you need us.</div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
@@ -198,31 +199,38 @@
                 <h1 class="theme-head theme-head2 mb-5">See how much money you can access</h1>
                 <div>
                     <form class="w-100 row theme-form eligibility-form" id="eligibility-1">
-                        <div class="form-group col-xl-12">
+                        <div class="form-group col-xl-6">
                             <label for="exampleInputEmail1">Home Address</label>
                             <input required type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
                         </div>
-                        <div class="form-group float-left col-xl-6 col-lg-6">
+                        <div class="form-group float-left col-lg-6 col-xl-6">
                             <label for="exampleInputPassword1">City</label>
                             <select required name="cars" id="cars" form="carform" class="form-control">
-                                <option value="volvo">Select City</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
-                            </select>
-                        </div>
-                        <div class="form-group float-left col-xl-6 col-lg-6">
-                            <label for="exampleInputPassword1">State</label>
-                            <select required name="cars" form="carform" class="form-control">
-                                <option value="volvo">Select State</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
+                                <option value="NA">Select City</option>
+                                <option value="	Agra	">	Agra	</option>
+                                <option value="	Ahmedabad	">	Ahmedabad	</option>
+                                <option value="	Bengaluru	">	Bengaluru	</option>
+                                <option value="	Gurgaon	">	Gurgaon	</option>
+                                <option value="	Hyderabad	">	Hyderabad	</option>
+                                <option value="	Indore	">	Indore	</option>
+                                <option value="	Jodhpur	">	Jodhpur	</option>
+                                <option value="	Kochi	">	Kochi	</option>
+                                <option value="	Meerut	">	Meerut	</option>
+                                <option value="	Mumbai	">	Mumbai	</option>
+                                <option value="	Mysore	">	Mysore	</option>
+                                <option value="	Nagpur	">	Nagpur	</option>
+                                <option value="	Pune	">	Pune	</option>
+                                <option value="	Raipur	">	Raipur	</option>
+                                <option value="	Rajkot	">	Rajkot	</option>
+                                <option value="	Sonipat	">	Sonipat	</option>
+                                <option value="	Surat	">	Surat	</option>
+                                <option value="	Trichy	">	Trichy	</option>
+                                <option value="	Vishakhapatnam	">	Vishakhapatnam	</option>
                             </select>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input required type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
@@ -329,7 +337,9 @@
                             So what exactly does Homsy do?
                             <img src="assets/img/dashicons_arrow-down-alt2.png">
                         </li>
-                        <div id="basic1" class="collapse show faq-description">Homsy is a way for homeowners to be paid today for equity they’ve accumulated in their property — without getting a loan. We invest alongside homeowners, providing cash today in exchange for a share in the home’s future value. Homeowners can settle the Investment any time within 10 years.</div>
+                        <div id="basic1" class="collapse show">
+                            <div class="faq-description">  Homsy is a way for homeowners to be paid today for equity they’ve accumulated in their property — without getting a loan. We invest alongside homeowners, providing cash today in exchange for a share in the home’s future value. Homeowners can settle the Investment any time within 10 years.</div>                             
+                        </div>
                     </ul>
                 </div>
             </div>
