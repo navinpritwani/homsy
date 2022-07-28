@@ -12481,7 +12481,7 @@ html {
 
 .success-box {
     padding: 1em;
-    background-color: #a8ef84;
+    background-color: #C1E1C1;
     border-radius: 8px;
     display: none;
 }
@@ -12523,4 +12523,20 @@ html {
 .el-list li span {
     float: right;
     opacity: 0.7;
+}
+
+.eligibility-form .form-group .form-control {
+    background-color: transparent;
+}
+
+.theme-btn:focus {
+    background-color: inherit;
+}
+
+.theme-btn:focus {
+    background-color: #2D3BD5;
+}
+
+.eligibility-form .form-group {
+    margin-bottom: 1.5em;
 }

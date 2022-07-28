@@ -44,7 +44,6 @@
 
 .theme-h4 {
     font-family: 'Montserrat';
-    font-style: italic;
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
@@ -92,10 +91,11 @@
     line-height: 19px;
     color: rgba(0, 0, 0, 0.6);
     height: 2.8em;
+    border-radius: 10px;
 }
 
 .feature-block {
-    padding: 2em;
+    padding: 2em 0em;
 }
 
 .sub-head {
@@ -130,7 +130,7 @@
 }
 
 .feature-block .description {
-    font-family: Montserrat;
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -139,6 +139,8 @@
     /* or 140% */
     text-align: center;
     color: #000000;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .portfolio {
@@ -167,7 +169,7 @@
     background-color: #fff;
     border-radius: 10px;
     padding: 2.5em 1.5em;
-    min-height: 17em;
+    min-height: 19em;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.17);
 }
 
@@ -183,11 +185,11 @@
     font-size: 24px;
     line-height: 29px;
     color: #000000;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
 }
 
 .theme-card p {
-    font-family: 'Montserrat';
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -206,7 +208,7 @@
 .eligibility-form .form-group label {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
     line-height: 22px;
 
@@ -232,7 +234,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 23px;
     line-height: 34px;
 
     /* identical to box height */
@@ -240,7 +242,7 @@
 }
 
 .step-card p {
-    font-family: 'Montserrat';
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
@@ -248,6 +250,7 @@
 
     /* or 140% */
     color: #000000;
+    padding-right: 0.5em;
 }
 
 .faq-head {
@@ -303,7 +306,7 @@
 }
 
 .faq-description {
-    font-family: 'Montserrat';
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: 325;
     font-size: 18px;
