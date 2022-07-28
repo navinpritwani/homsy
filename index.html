@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5 text-center">
-                        <a class="btn btn-primary theme-btn" href="#page-top">Apply for Exclusive Invite</a>
+                        <button data-toggle="modal" data-target="#waitlistModal" class="btn btn-primary theme-btn" type="button">Apply for Exclusive Invite</button>
                     </div>
                     <!-- Portfolio Item 2-->
                     <!-- Portfolio Item 3-->
@@ -616,10 +616,10 @@
                             <div class="col-xl-6 col-lg-6">
                                 <ul class="p-0">
                                     <li class="text-left">
-                                        <a href="" class="footer-link">Privacy Policy</a>
+                                        <a href="privacy-homsy.html" class="footer-link">Privacy Policy</a>
                                     </li>
                                     <li class="text-left">
-                                        <a href="" class="footer-link">Terms & Conditions</a>
+                                        <a href="terms-homsy.html" class="footer-link">Terms & Conditions</a>
                                     </li>
                                     <li class="text-left">
                                         <a href="" class="footer-link">Support</a>
@@ -629,13 +629,13 @@
                             <div class="col-lg-6 col-xl-6">
                                 <ul class="p-0">
                                     <li class="text-left">
-                                        <a href="" class="footer-link">Join Waitlist</a>
+                                        <a class="footer-link" data-toggle="modal" data-target="#waitlistModal">Join Waitlist</a>
                                     </li>
                                     <li class="text-left">
-                                        <a href="" class="footer-link">Check Eligibility</a>
+                                        <a href="#eligibility" class="footer-link">Check Eligibility</a>
                                     </li>
                                     <li class="text-left">
-                                        <a href="" class="footer-link">FAQs</a>
+                                        <a href="#faq" class="footer-link">FAQs</a>
                                     </li>
                                 </ul>
                             </div>
@@ -670,34 +670,40 @@
         <!-- Portfolio Modal 2-->
         <!-- Portfolio Modal 3-->
         <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+        <div class="fade modal portfolio-modal" id="waitlistModal" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content modal">
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon">
-                                            <i class="fas fa-star"></i>
+                                <div class="col-lg-8 col-xl-12">
+                                    <form class="theme-form ml-5" name="submit-to-google-sheet" method="POST" action="https://script.google.com/macros/s/AKfycbwrGdQZ6f28IWKzQo-APhJFGWWh1G-gXkU4C1ClVouUCEaZvWFjw5Jc2ji8zqCYhCxZ/exec">
+                                        <h3 class="theme-h3 mb-4">Join 1500+ Indians in our exclusive waitlist</h3>
+                                        <div class="form-group">
+                                            <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" required>
                                         </div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
+                                        <div class="form-group">
+                                            <input type="text" name="last_name" class="form-control" aria-describedby="emailHelp" placeholder="Last Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" name="email_id" class="form-control" aria-describedby="emailHelp" placeholder="Email ID" required>
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">+91</div>
+                                            </div>
+                                            <input type="tel" pattern=".{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
+                                        </div>
+                                        <div class="success-box text-black-50">Congrats! Your request has been received.</div>
+                                        <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
+                                    </form>
+                                    <!-- Portfolio Modal - Title-->
+                                    <!-- Icon Divider-->
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..."/>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
                                 </div>
                             </div>
                         </div>
