@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5859FD2');</script>
+        <!-- End Google Tag Manager -->
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="description" content=""/>
@@ -20,6 +27,11 @@
         <link href="css/theme.css" rel="stylesheet" type="text/css">
     </head>
     <body id="page-top">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5859FD2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <!-- Navigation-->
         <!-- Masthead-->
         <header class="masthead text-white text-center bg-theme">
@@ -573,25 +585,28 @@
                 <!-- Contact Section Form-->
                 <h2 class="mb-0 theme-subhead"><img src="assets/img/line.png"/>Feel free to connect with us</h2>
                 <h1 class="theme-head theme-head2 mb-5">Get in Contact</h1>
-                <form class="eligibility-form theme-form row w-100">
+                <form class="eligibility-form theme-form row w-100" name="submit-to-google-sheet-2" method="POST" action="https://script.google.com/macros/s/AKfycbxIkmVub4bZAnlrkFqLhnz2W54c1XePsmHZElxdc09FUiYJCtYmSzXgKZFXOwSZ6Bfq-g/exec">
                     <div class="form-group col-xl-4 col-lg-12">
                         <label for="exampleInputEmail1">Full Name</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter full name"/>
+                        <input type="text" name="full_name" class="form-control" aria-describedby="emailHelp" placeholder="Enter full name" required/>
                     </div>
                     <div class="form-group col-xl-4 col-lg-6">
                         <label for="exampleInputEmail1">Email Address</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                        <input type="text" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email address" required/>
                     </div>
                     <div class="form-group col-xl-4 col-lg-6">
                         <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
+                        <input type="tel" pattern=".{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" required/>
                     </div>
                     <div class="form-group col-xl-8 col-lg-8">
                         <label for="exampleInputEmail1">Message</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Type your message here"/>
+                        <input type="text" name="message" class="form-control" aria-describedby="emailHelp" placeholder="Type your message here"/>
                     </div>
                     <div class="form-group col-xl-4 d-flex align-items-end col-lg-4">
                         <button type="submit" class="btn theme-btn btn-primary w-100">Submit</button>
+                    </div>
+                    <div class="form-group d-flex align-items-end col-lg-4 col-xl-12 justify-content-center">
+                        <div class="text-black-50 success-box2">Thank you! Your request has been received.</div>
                     </div>
                 </form>
             </div>
@@ -704,78 +719,6 @@
                                     <!-- Icon Divider-->
                                     <!-- Portfolio Modal - Image-->
                                     <!-- Portfolio Modal - Text-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon">
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..."/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0">
-                        <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon">
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..."/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -961,6 +904,27 @@
                     e.target.reset();
                 })
 
+        </script>
+        <script>
+            success = function() {
+                                $('.success-box2').css('display', 'block');
+                                setTimeout( function() { 
+                                    $('.success-box2').css('display', 'none');
+                                }, 4000);
+                    }
+                const scriptURL2 = 'https://script.google.com/macros/s/AKfycbxIkmVub4bZAnlrkFqLhnz2W54c1XePsmHZElxdc09FUiYJCtYmSzXgKZFXOwSZ6Bfq-g/exec'
+                const form2 = document.forms['submit-to-google-sheet-2']
+
+
+                form2.addEventListener('submit', e => {
+                    e.preventDefault()
+                    fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
+                    .then(response => console.log('Success!', response.json()),
+                            success()    
+                        )
+                    .catch(error => console.error('Error!', error.message))
+                    e.target.reset();
+                })
         </script>
     </body>
 </html>

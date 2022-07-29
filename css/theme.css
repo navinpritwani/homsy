@@ -481,3 +481,10 @@
     /* or 256% */
     color: #000000;
 }
+
+.success-box2 {
+    padding: 1em;
+    background-color: #C1E1C1;
+    border-radius: 8px;
+    display: none;
+}
