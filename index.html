@@ -251,7 +251,7 @@
                             <button type="submit" class="btn theme-btn btn-primary w-100">Check Eligibility</button>
                         </div>
                     </form>
-                    <div class="eligibility-form theme-form w-100 row" id="eligibility-2">
+                    <div class="eligibility-form theme-form w-100 row" id = "eligibility-2">
                         <div class="col-xl-6 col-lg-6 theme-form">
                             <h2 class="theme-h2">Congratulations!</h2>
                             <h4 class="theme-h4 text-center mt-4">You can receive up to</h4>
@@ -573,7 +573,7 @@
                 <!-- Contact Section Form-->
                 <h2 class="mb-0 theme-subhead"><img src="assets/img/line.png"/>Feel free to connect with us</h2>
                 <h1 class="theme-head theme-head2 mb-5">Get in Contact</h1>
-                <form class="eligibility-form theme-form row w-100" method="POST" action="https://script.google.com/macros/s/AKfycbzYTB7HFF0ySyfgrnalZnlFxcSQIoCbxFbWrtCU_aAb0Dfzg582ZYGPYPlvIf31Kd0I/exec" >
+                <form class="eligibility-form theme-form row w-100" method="POST" action="https://script.google.com/macros/s/AKfycbzYTB7HFF0ySyfgrnalZnlFxcSQIoCbxFbWrtCU_aAb0Dfzg582ZYGPYPlvIf31Kd0I/exec" name="submit-to-google-sheet-2" >
                     <div class="form-group col-xl-4 col-lg-12">
                         <label for="exampleInputEmail1">Full Name</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter full name" name="full_name"/>
@@ -961,6 +961,28 @@
                     e.target.reset();
                 })
 
+        </script>
+
+        <script>
+            success = function() {
+                                $('.success-box').css('display', 'block');
+                                setTimeout( function() { 
+                                    $('.success-box').css('display', 'none');
+                                }, 4000);
+                            }
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzYTB7HFF0ySyfgrnalZnlFxcSQIoCbxFbWrtCU_aAb0Dfzg582ZYGPYPlvIf31Kd0I/exec'
+                const form = document.forms['submit-to-google-sheet-2']
+
+
+                form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => console.log('Success!', response.json()),
+                            success()    
+                        )
+                    .catch(error => console.error('Error!', error.message))
+                    e.target.reset();
+                })
         </script>
     </body>
 </html>
