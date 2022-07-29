@@ -26,8 +26,7 @@
     text-align: left;
 }
 
-.theme-head span {
-}
+
 
 .theme-text-color {
     color: #2D3BD5;
@@ -98,8 +97,7 @@
     padding: 2em 0em;
 }
 
-.sub-head {
-}
+
 
 .feature-block .sub-head {
     font-family: Montserrat;
@@ -126,8 +124,6 @@
     margin-bottom: 0.5em;
 }
 
-.description {
-}
 
 .feature-block .description {
     font-family: IBM Plex Sans;
@@ -216,8 +212,7 @@
     color: #000000;
 }
 
-.step-card {
-}
+
 
 .step-card h1 {
     font-family: Montserrat;
@@ -416,12 +411,10 @@
     }
 }
 
-.masthead .col-lg-7 {
-}
+
 
 @media only screen and (max-width:767px) {
-    .masthead .col-lg-7 {
-    }
+   
 
     .masthead .theme-btn {
         width: 100%;
@@ -431,8 +424,6 @@
         margin-left: 0em;
     }
 
-    .footer {
-    }
 }
 
 .footer img {

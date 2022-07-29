@@ -28,10 +28,10 @@
     </head>
     <body id="page-top">
         <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5859FD2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5859FD2"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+
         <!-- Navigation-->
         <!-- Masthead-->
         <header class="masthead text-white text-center bg-theme">
@@ -46,7 +46,7 @@
                             <li class="theme-list">No credit requirements</li>
                         </ul>
                         <h4 class="theme-h4 mb-5">Certified by the Government of India</h4>
-                        <a class="btn btn-primary theme-btn" href="https://calendly.com/homsy-india" target="_blank">Schedule a call</a>
+                        <a class="btn btn-primary theme-btn" id="schedule-a-call" href="https://calendly.com/homsy-india" target="_blank">Schedule a call</a>
                     </div>
                     <div class="col-lg-5 col-12" style="display: flex; justify-content: center;">
                         <form class="theme-form" name="submit-to-google-sheet" method="POST" action="https://script.google.com/macros/s/AKfycbwrGdQZ6f28IWKzQo-APhJFGWWh1G-gXkU4C1ClVouUCEaZvWFjw5Jc2ji8zqCYhCxZ/exec">
@@ -70,7 +70,7 @@
                                 <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
                             </div>
                             <div class="success-box text-black-50">Congrats! Your request has been received.</div>
-                            <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
+                            <button type="submit" id="invite-form-button-1"class="btn btn-primary theme-btn mt-4">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                     <div class="text-center col-xl-12 col-lg-12 mt-4">
-                        <a href="#faq" class="cta">Learn More <i class="arrow right"></i></a>
+                        <a href="#faq" id="learn-more" class="cta">Learn More <i class="arrow right"></i></a>
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5 text-center">
-                        <button data-toggle="modal" data-target="#waitlistModal" class="btn btn-primary theme-btn" type="button">Apply for Exclusive Invite</button>
+                        <button data-toggle="modal" id="apply-for-exclusive-invite" data-target="#waitlistModal" class="btn btn-primary theme-btn" type="button">Apply for Exclusive Invite</button>
                     </div>
                     <!-- Portfolio Item 2-->
                     <!-- Portfolio Item 3-->
@@ -260,10 +260,10 @@
                             </div>
                         </div>
                         <div class="form-group col-xl-4 d-flex align-items-end col-lg-5">
-                            <button type="submit" class="btn theme-btn btn-primary w-100">Check Eligibility</button>
+                            <button type="submit" id="check-eligibility" class="btn theme-btn btn-primary w-100">Check Eligibility</button>
                         </div>
                     </form>
-                    <div class="eligibility-form theme-form w-100 row" id="eligibility-2">
+                    <div class="eligibility-form theme-form w-100 row" id = "eligibility-2">
                         <div class="col-xl-6 col-lg-6 theme-form">
                             <h2 class="theme-h2">Congratulations!</h2>
                             <h4 class="theme-h4 text-center mt-4">You can receive up to</h4>
@@ -603,7 +603,7 @@
                         <input type="text" name="message" class="form-control" aria-describedby="emailHelp" placeholder="Type your message here"/>
                     </div>
                     <div class="form-group col-xl-4 d-flex align-items-end col-lg-4">
-                        <button type="submit" class="btn theme-btn btn-primary w-100">Submit</button>
+                        <button type="submit" id="contact-form-submit" class="btn theme-btn btn-primary w-100">Submit</button>
                     </div>
                     <div class="form-group d-flex align-items-end col-lg-4 col-xl-12 justify-content-center">
                         <div class="text-black-50 success-box2">Thank you! Your request has been received.</div>
@@ -713,7 +713,7 @@
                                             <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
                                         </div>
                                         <div class="success-box text-black-50">Congrats! Your request has been received.</div>
-                                        <button type="submit" class="btn btn-primary theme-btn mt-4">Submit</button>
+                                        <button type="submit" id="invite-form-button-2" class="btn btn-primary theme-btn mt-4">Submit</button>
                                     </form>
                                     <!-- Portfolio Modal - Title-->
                                     <!-- Icon Divider-->
