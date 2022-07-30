@@ -26,8 +26,6 @@
     text-align: left;
 }
 
-
-
 .theme-text-color {
     color: #2D3BD5;
 }
@@ -97,8 +95,6 @@
     padding: 2em 0em;
 }
 
-
-
 .feature-block .sub-head {
     font-family: Montserrat;
     font-style: normal;
@@ -123,7 +119,6 @@
     color: #000000;
     margin-bottom: 0.5em;
 }
-
 
 .feature-block .description {
     font-family: IBM Plex Sans;
@@ -211,8 +206,6 @@
     /* identical to box height */
     color: #000000;
 }
-
-
 
 .step-card h1 {
     font-family: Montserrat;
@@ -356,6 +349,7 @@
     .theme-list {
         font-size: 20px;
         text-align: center;
+        display: inline-block;
     }
 
     .navbar-collapse {
@@ -390,6 +384,7 @@
 @media only screen and (max-width:767px) {
     .masthead ul {
         padding-left: 0;
+        text-align: center;
     }
 
     .masthead .theme-h4 {
@@ -411,11 +406,7 @@
     }
 }
 
-
-
 @media only screen and (max-width:767px) {
-   
-
     .masthead .theme-btn {
         width: 100%;
     }
@@ -423,7 +414,6 @@
     .eligibility-form {
         margin-left: 0em;
     }
-
 }
 
 .footer img {

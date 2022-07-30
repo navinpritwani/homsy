@@ -64,7 +64,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">+91</div>
                                 </div>
-                                <input type="tel" pattern=".{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required>
+                                <input type="tel" pattern="[0-9]{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')">
                             </div>
                             <div class="form-group">
                                 <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
@@ -212,7 +212,7 @@
                 <div>
                     <form class="w-100 row theme-form eligibility-form" id="eligibility-1" onsubmit="submitForm(this)">
                         <div class="form-group col-xl-6">
-                            <label for="exampleInputEmail1">Home Address</label>
+                            <label for="exampleInputEmail1">Home/Land Address</label>
                             <input required name="address" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
                         </div>
                         <div class="form-group float-left col-lg-6 col-xl-6">
@@ -245,7 +245,7 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input required type="tel" pattern=".{10}" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number"/>
+                            <input required type="tel" pattern="[0-9]{10}" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
@@ -270,7 +270,7 @@
                             <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i><span id="e_amt"></span></h1>
                             <form class="w-100">
                                 <div class="form-group col-xl-12">
-                                    <label for="exampleInputEmail1" class="mb-5">Select Amount (in Lakhs)</label>
+                                    <label for="exampleInputEmail1" class="mb-5">Select Loan Amount (in Lakhs)</label>
                                     <input type="range" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
                                     <span class="range-value" id="amt-range-val">0</span>
                                 </div>
@@ -286,8 +286,19 @@
                             <h4 class="theme-h4 text-center mt-4">After <span id="tenure"></span> Years</h4>
                             <h1 class="text-center theme-text-color theme-head mb-5"><i class="fa fa-inr"></i> <span id="payback_amt"></span></h1>
                             <ul class="el-list mb-5">
-                                <li>Appreciation
-                                    <span class="theme-text-color">3.2%</span>
+                                <li>Appreciation Rate(per annum)
+                                    <span class="theme-text-color"> <select name="appreciation" id="appreciation" onchange="getUpdatedValue()">
+                                            <option value="1">  1%	</option>
+                                            <option value="2">	2%	</option>
+                                            <option value="3">	3%	</option>
+                                            <option value="4">	4%	</option>
+                                            <option value="5">	5%	</option>
+                                            <option value="6">	6%	</option>
+                                            <option value="7">	7%	</option>
+                                            <option value="8">	8%	</option>
+                                            <option value="9">	9%	</option>
+                                            <option value="10">	10%	</option>
+                                        </select> </span>
                                 </li>
                                 <li>Final Home Value
                                     <span><i class="fa fa-inr"></i> <span id="finalHomeValue"></span></span>
@@ -299,7 +310,7 @@
                                     <span><i class="fa fa-inr"></i> <span id="homsyShare"></span></span>
                                 </li>
                             </ul>
-                            <button id="apply-for-funds" class="btn theme-btn btn-primary w-100">Apply for funds</button>
+                            <button id="apply-for-funds" class="btn theme-btn btn-primary w-100" onclick="ApplyFunds()">Apply for funds</button>
                         </div>
                     </div>
                 </div>
@@ -822,20 +833,32 @@
                     
                 })
 
+                var formDetails = [];
+
+                function getAppreciationRate(){
+                    return document.getElementById("appreciation").value;
+                }
+
                 var slider = document.getElementById("amt-range");
                 var output = document.getElementById("amt-range-val");
+                var appreciation_rate = getAppreciationRate();
                 var slider_max = slider.getAttribute("max")
                 var payback_amt = document.getElementById("payback_amt");
                 output.innerHTML = slider.value + 'L';
                 payback_amt.innerHTML = (slider.value * 100000).toLocaleString('en-IN');
                 output.style.left = (slider.value/slider_max)*100 + '%';
 
+                function getUpdatedValue(){
+                    var temp = getAppreciationRate();
+                    CalHomeVal(slider.value * 100000,slider2.value,slider_max,temp);
+                }
 
                 slider.oninput = function() {
                 slider_max = slider.getAttribute("max")
                 output.innerHTML = this.value + 'L';
                 output.style.left = (this.value/slider_max)*100 + '%';
-                CalHomeVal(this.value * 100000,slider2.value,slider_max);
+                appreciation_rate = getAppreciationRate();
+                CalHomeVal(this.value * 100000,slider2.value,slider_max,appreciation_rate);
                 }
 
                 var slider2 = document.getElementById("ten-range");
@@ -846,11 +869,14 @@
                 slider2.oninput = function() {
                 output2.innerHTML = this.value + 'Y';
                 output2.style.left = ((this.value/10)*100)-6 + '%';
-                CalHomeVal(slider.value * 100000,this.value,slider_max);
+                appreciation_rate = getAppreciationRate();
+                CalHomeVal(slider.value * 100000,this.value,slider_max,appreciation_rate);
                 }
 
                 function submitForm(that) {
-                    console.log(that[4].value)
+                    for (let i = 0; i < 5; i++) {
+                        formDetails.push(that[i])
+                    }
                     var e_amt = (that[4].value)/2.5;
                     var max_amt = e_amt/100000;
                     e_amt = e_amt.toLocaleString('en-IN');
@@ -858,11 +884,18 @@
                     slider.setAttribute("max",max_amt)
                 }
 
-                CalHomeVal = function(val,ten,max) {
+                function ApplyFunds() {
+
+                    console.log(formDetails);
+
+
+                }
+
+                CalHomeVal = function(val,ten,max,rate) {
                     var homeValue = (max * 2.5) * 100000;
                     var loanAmount = val
                     var tenure = ten
-                    appreciationRate = 0.032;
+                    appreciationRate = rate/100;
                     var riskAdjustmentDiscount = 0.2
                     var homsyAppreciationBonus = 0.15
 
@@ -875,6 +908,11 @@
 
 
                     var pay_val = Math.trunc(homsyShare) ;
+                    if(loanAmount == 0){
+                        pay_val = 0;
+                        finalHomeValue = homeValue;
+                        ownerShare = homeValue;
+                    }
                     payback_amt.innerHTML = (pay_val.toLocaleString('en-IN'));
                     document.getElementById("finalHomeValue").innerHTML = ((Math.trunc(finalHomeValue)).toLocaleString('en-IN'))
                     document.getElementById("homsyShare").innerHTML = (pay_val.toLocaleString('en-IN'))
