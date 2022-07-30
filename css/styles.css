@@ -12544,3 +12544,25 @@ html {
 .portfolio-modal .modal-body {
     z-index: 9999999;
 }
+
+@media only screen and (max-width:767px) {
+    .head-title {
+        font-size: 23px !important;
+    }
+
+    .feature-block .description {
+        font-size: 18px !important;
+    }
+
+    .theme-card h2 {
+        font-size: 20px !important;
+    }
+
+    .theme-card p {
+        font-size: 16px !important;
+    }
+
+    #eligibility-2 .theme-form {
+        border: 0px solid;
+    }
+}
