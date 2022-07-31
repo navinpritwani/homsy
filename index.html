@@ -939,6 +939,7 @@
                     e.preventDefault()
                     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                     .then(response => console.log('Success!', response),
+                            console.log("please") 
                             success()    
                         )
                     .catch(error => console.error('Error!', error.message))
@@ -960,9 +961,9 @@
                 form2.addEventListener('submit', e => {
                     e.preventDefault()
                     fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
-                    .then(response => console.log('Success!', response.json()),
+                    .then(response => console.log('Success!', response.json()), 
                             success()
-                            console.log("please")    
+
                         )
                     .catch(error => console.error('Error!', error.message))
                     e.target.reset();
