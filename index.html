@@ -210,10 +210,10 @@
                 <h2 class="mb-0 theme-subhead"><img src="assets/img/line.png"/>Free your trapped capital</h2>
                 <h1 class="theme-head theme-head2 mb-5">See how much money you can access</h1>
                 <div>
-                    <form class="w-100 row theme-form eligibility-form" id="eligibility-1" onsubmit="submitForm(this)">
+                    <form class="w-100 row theme-form eligibility-form" name="submit-to-google-sheets-3" id="eligibility-1" onsubmit="submitForm(this)">
                         <div class="form-group col-xl-6">
                             <label for="exampleInputEmail1">Home/Land Address</label>
-                            <input required name="address" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
+                            <input required name="address" id="check-eligibility-address" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter home address"/>
                         </div>
                         <div class="form-group float-left col-lg-6 col-xl-6">
                             <label for="exampleInputPassword1">City</label>
@@ -241,11 +241,11 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="email" id="check-elgibility-email" aria-describedby="emailHelp" placeholder="Enter Email address"/>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input required type="tel" pattern="[0-9]{10}" name="phone" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
+                            <input required type="tel" pattern="[0-9]{10}" name="phone" id="check-elgibility-phone-number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
@@ -253,7 +253,7 @@
                                 <span class="input-group-prepend"> <button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
                                         <span class="fa fa-minus"></span>
                                     </button> </span>
-                                <input required type="text" name="quant[1]" class="form-control input-number" value="2500000" min="2500000" max="50000000">
+                                <input required type="text" name="quant[1]" id="check-elgibility-home-value" class="form-control input-number" value="2500000" min="2500000" max="50000000">
                                 <span class="input-group-append"> <button type="button" class="btn btn-number btn-outline-secondary" data-type="plus" data-field="quant[1]">
                                         <span class="fa fa-plus"></span>
                                     </button> </span>
@@ -271,12 +271,12 @@
                             <form class="w-100">
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Loan Amount (in Lakhs)</label>
-                                    <input type="range" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
+                                    <input type="range" id="check-elgibility-loan-amount" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
                                     <span class="range-value" id="amt-range-val">0</span>
                                 </div>
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Tenure (in Years)</label>
-                                    <input type="range" class="custom-range" min="0" max="10" step="1" id="ten-range" value="1">
+                                    <input type="range" id="check-elgibility-tenure" class="custom-range" min="0" max="10" step="1" id="ten-range" value="1">
                                     <span class="range-value" id="ten-range-val">0</span>
                                 </div>
                             </form>
@@ -920,7 +920,35 @@
                     document.getElementById("tenure").innerHTML = tenure;
                 }
 
+                success = function() {
+                                $('.success-box2').css('display', 'block');
+                                setTimeout( function() { 
+                                    $('.success-box2').css('display', 'none');
+                                }, 4000);
+                }
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxIkmVub4bZAnlrkFqLhnz2W54c1XePsmHZElxdc09FUiYJCtYmSzXgKZFXOwSZ6Bfq-g/exec'
+                const form = document.forms['submit-to-google-sheet-3']
+
+
+                form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    var obj = new FormData(form)
+                    obj.append("address",document.getElementById("check-eligibility-address"))
+                    obj.append("address",document.getElementById("check-eligibility-email"))
+                    obj.append("address",document.getElementById("check-eligibility-phone-number"))
+                    obj.append("address",document.getElementById("check-eligibility-loan-amount"))
+                    obj.append("address",document.getElementById("check-eligibility-tenure"))
+                    fetch(scriptURL, { method: 'POST', body: })
+                    .then(response => console.log('Success!', response.json()), 
+                            success()
+                        )
+                    .catch(error => console.error('Error!', error.message))
+                    e.target.reset();
+                })   
         </script>
+
+
         <script>
             success = function() {
                                 // $('.success-box').css('display', 'block');
@@ -956,6 +984,28 @@
                     }
                 const scriptURL2 = 'https://script.google.com/macros/s/AKfycbxIkmVub4bZAnlrkFqLhnz2W54c1XePsmHZElxdc09FUiYJCtYmSzXgKZFXOwSZ6Bfq-g/exec'
                 const form2 = document.forms['submit-to-google-sheet-2']
+
+
+                form2.addEventListener('submit', e => {
+                    e.preventDefault()
+                    fetch(scriptURL2, { method: 'POST', body: new FormData(form2)})
+                    .then(response => console.log('Success!', response.json()), 
+                            success()
+                        )
+                    .catch(error => console.error('Error!', error.message))
+                    e.target.reset();
+                })
+
+        </script>
+         <script>
+            success = function() {
+                                $('.success-box2').css('display', 'block');
+                                setTimeout( function() { 
+                                    $('.success-box2').css('display', 'none');
+                                }, 4000);
+                    }
+                const scriptURL2 = 'https://script.google.com/macros/s/AKfycbxIkmVub4bZAnlrkFqLhnz2W54c1XePsmHZElxdc09FUiYJCtYmSzXgKZFXOwSZ6Bfq-g/exec'
+                const form2 = document.forms['submit-to-google-sheet-3']
 
 
                 form2.addEventListener('submit', e => {
