@@ -934,14 +934,14 @@
                 form.addEventListener('submit', e => {
                     e.preventDefault()
                     var obj = new FormData(form)
-                    obj.append("home_address",document.getElementById("check-eligibility-address"))
-                    obj.append("city",document.getElementById("cars"))
-                    obj.append("email_address",document.getElementById("check-eligibility-email"))
-                    obj.append("phone_number",document.getElementById("check-eligibility-phone-number"))
-                    obj.append("home_value",document.getElementById("check-eligibility-home-value"))
-                    obj.append("loan_amount",document.getElementById("check-eligibility-loan-amount"))
-                    obj.append("tenure",document.getElementById("check-eligibility-tenure"))
-                    obj.append("appreciation_rate",document.getElementById("appreciation"))
+                    obj.append("home_address",document.getElementById("check-eligibility-address"));
+                    obj.append("city",document.getElementById("cars"));
+                    obj.append("email_address",document.getElementById("check-eligibility-email"));
+                    obj.append("phone_number",document.getElementById("check-eligibility-phone-number"));
+                    obj.append("home_value",document.getElementById("check-eligibility-home-value"));
+                    obj.append("loan_amount",document.getElementById("check-eligibility-loan-amount"));
+                    obj.append("tenure",document.getElementById("check-eligibility-tenure"));
+                    obj.append("appreciation_rate",document.getElementById("appreciation"));
                     
                     fetch(scriptURL, { method: 'POST', body: obj})
                     .then(response => console.log('Success!', response.json()), 
