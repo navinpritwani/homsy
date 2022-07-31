@@ -11,7 +11,24 @@
           gtag('config', 'AW-10938920960');
         </script>
 
-        
+        <!-- Event snippet for Book appointment conversion page
+        In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+        <script>
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              }; 
+              gtag('event', 'conversion', 
+              {
+                  'send_to': 'AW-10938920960/vy5ACNHssNEDEIDgiuAo',
+                  'event_callback': callback
+              });
+              return false;
+            }
+        </script>
+
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -57,7 +74,7 @@
                             <li class="theme-list">No credit requirements</li>
                         </ul>
                         <h4 class="theme-h4 mb-5">Certified by the Government of India</h4>
-                        <a class="btn btn-primary theme-btn" id="schedule-a-call" href="https://calendly.com/homsy-india" target="_blank">Schedule a call</a>
+                        <a class="btn btn-primary theme-btn" id="schedule-a-call" href="https://calendly.com/homsy-india" onclick="gtag_report_conversion();" target="_blank">Schedule a call</a>
                     </div>
                     <div class="col-lg-5 col-12" style="display: flex; justify-content: center;">
                         <form class="theme-form" name="submit-to-google-sheet" method="POST" action="https://script.google.com/macros/s/AKfycbzHu8nwrPVWdU9qLC2by31P2lR5zs1ocnSjCa93FE06OVn75wXlogheFY1S0xUV7JOI/exec">
@@ -1031,5 +1048,8 @@
                 })
 
         </script>
+
+
+
     </body>
 </html>
