@@ -241,11 +241,11 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="email" id="check-elgibility-email" aria-describedby="emailHelp" placeholder="Enter Email address"/>
+                            <input required type="text" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control" name="email" id="check-eligibility-email" aria-describedby="emailHelp" placeholder="Enter Email address"/>
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input required type="tel" pattern="[0-9]{10}" name="phone" class="form-control" id="check-elgibility-phone-number" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
+                            <input required type="tel" pattern="[0-9]{10}" name="phone" class="form-control" id="check-eligibility-phone-number" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
@@ -271,12 +271,12 @@
                             <form class="w-100">
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Loan Amount (in Lakhs)</label>
-                                    <input type="range" id="check-elgibility-loan-amount" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
+                                    <input type="range" id="check-eligibility-loan-amount" class="custom-range" min="0" max="5" step="0.5" id="amt-range" value="0">
                                     <span class="range-value" id="amt-range-val">0</span>
                                 </div>
                                 <div class="form-group col-xl-12">
                                     <label for="exampleInputEmail1" class="mb-5">Select Tenure (in Years)</label>
-                                    <input type="range" id="check-elgibility-tenure" class="custom-range" min="0" max="10" step="1" id="ten-range" value="1">
+                                    <input type="range" id="check-eligibility-tenure" class="custom-range" min="0" max="10" step="1" id="ten-range" value="1">
                                     <span class="range-value" id="ten-range-val">0</span>
                                 </div>
                             </form>
@@ -935,6 +935,7 @@
                     e.preventDefault()
                     var obj = new FormData(form)
                     obj.append("address",document.getElementById("check-eligibility-address"))
+                    obj.append("address",document.getElementById("cars"))
                     obj.append("address",document.getElementById("check-eligibility-email"))
                     obj.append("address",document.getElementById("check-eligibility-phone-number"))
                     obj.append("address",document.getElementById("check-eligibility-loan-amount"))
