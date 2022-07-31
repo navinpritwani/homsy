@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Ads: 10938920960 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10938920960"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-10938920960');
+        </script>
+
+        
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -310,7 +321,7 @@
                                     <span><i class="fa fa-inr"></i> <span id="homsyShare"></span></span>
                                 </li>
                             </ul>
-                            <button id="apply-for-funds" class="btn theme-btn btn-primary w-100" onclick="ApplyFunds()">Apply for funds</button>
+                            <button type="submit" id="apply-for-funds" class="btn theme-btn btn-primary w-100" onclick="ApplyFunds()">Apply for funds</button>
                         </div>
                     </div>
                 </div>
@@ -854,11 +865,11 @@
                 }
 
                 slider.oninput = function() {
-                slider_max = slider.getAttribute("max")
-                output.innerHTML = this.value + 'L';
-                output.style.left = (this.value/slider_max)*100 + '%';
-                appreciation_rate = getAppreciationRate();
-                CalHomeVal(this.value * 100000,slider2.value,slider_max,appreciation_rate);
+                    slider_max = slider.getAttribute("max")
+                    output.innerHTML = this.value + 'L';
+                    output.style.left = (this.value/slider_max)*100 + '%';
+                    appreciation_rate = getAppreciationRate();
+                    CalHomeVal(this.value * 100000,slider2.value,slider_max,appreciation_rate);
                 }
 
                 var slider2 = document.getElementById("ten-range");
@@ -867,10 +878,10 @@
                 output2.style.left = (slider2.value/10)*100 + '%';
 
                 slider2.oninput = function() {
-                output2.innerHTML = this.value + 'Y';
-                output2.style.left = ((this.value/10)*100)-6 + '%';
-                appreciation_rate = getAppreciationRate();
-                CalHomeVal(slider.value * 100000,this.value,slider_max,appreciation_rate);
+                    output2.innerHTML = this.value + 'Y';
+                    output2.style.left = ((this.value/10)*100)-6 + '%';
+                    appreciation_rate = getAppreciationRate();
+                    CalHomeVal(slider.value * 100000,this.value,slider_max,appreciation_rate);
                 }
 
                 function submitForm(that) {
@@ -885,10 +896,7 @@
                 }
 
                 function ApplyFunds() {
-
                     console.log(formDetails);
-
-
                 }
 
                 CalHomeVal = function(val,ten,max,rate) {
