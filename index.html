@@ -70,7 +70,7 @@
                                 <input name="city_of_property" type="text" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
                             </div>
                             <div class="success-box text-black-50">Congrats! Your request has been received.</div>
-                            <button type="reset" class="btn btn-primary theme-btn mt-4" id="invite-form-button-1">Submit</button>
+                            <button type="submit" class="btn btn-primary theme-btn mt-4" id="invite-form-button-1">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -929,6 +929,7 @@
                                 // }, 4000);
                                 alert("ok");
                                 window.location.href = "./thankyou.html";
+                                return false;
                 }
                 const scriptURL = 'https://script.google.com/macros/s/AKfycbzHu8nwrPVWdU9qLC2by31P2lR5zs1ocnSjCa93FE06OVn75wXlogheFY1S0xUV7JOI/exec'
                 const form = document.forms['submit-to-google-sheet']
