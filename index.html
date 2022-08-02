@@ -965,7 +965,9 @@
                     e.preventDefault()
                     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                     .then(response => console.log('Success!', response),
-                            window.location.replace("http://www.homsy.in/thankyou.html") 
+                                setTimeout( function() { 
+                                    window.location.replace("http://www.homsy.in/thankyou.html");
+                                }, 4000)
                         )
                     .catch(error => console.error('Error!', error.message))
                     e.target.reset();
@@ -1008,7 +1010,9 @@
                     
                     fetch(scriptURL3, { method: 'POST', body: new FormData(form3)})
                     .then(response => console.log('Success!', response.json()),  
-                            window.location.replace("http://www.homsy.in/thankyou.html")
+                                setTimeout( function() { 
+                                    window.location.replace("http://www.homsy.in/thankyou.html");
+                                }, 4000)
                         )
                     .catch(error => console.error('Error!', error.message))
                     e.target.reset();
