@@ -90,7 +90,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">+91</div>
                                 </div>
-                                <input name="phone_number" type="tel" pattern="[0-9]{10}" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')">
+                                <input name="phone_number" type="tel" pattern="[0-9]{10}" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')" onchange="this.setCustomValidity('')">
                             </div>
                             <div class="form-group">
                                 <input name="city_of_property" type="text" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
@@ -271,7 +271,7 @@
                         </div>
                         <div class="form-group col-xl-6 col-lg-6">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input required type="tel" pattern=".{10}" class="form-control" id="check-eligibility-phone-number" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')"/>
+                            <input required type="tel" pattern="[0-9]{10}" class="form-control" id="check-eligibility-phone-number" aria-describedby="emailHelp" placeholder="Enter Phone Number" oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')" onchange="this.setCustomValidity('')"/>
                         </div>
                         <div class="form-group col-xl-8 col-lg-7">
                             <label for="exampleInputEmail1">Estimated Home Value (in Rupees)</label>
@@ -643,7 +643,7 @@
                     </div>
                     <div class="form-group col-xl-4 col-lg-6">
                         <label for="exampleInputEmail1">Phone Number</label>
-                        <input type="tel" pattern=".{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" required/>
+                        <input type="tel" pattern="[0-9]{10}" name="phone_number" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" required oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')" onchange="this.setCustomValidity('')"/>
                     </div>
                     <div class="form-group col-xl-8 col-lg-8">
                         <label for="exampleInputEmail1">Message</label>
@@ -754,7 +754,7 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">+91</div>
                                             </div>
-                                            <input type="tel" name="phone_number" pattern=".{10}" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required>
+                                            <input type="tel" name="phone_number" pattern="[0-9]{10}" class="form-control" aria-describedby="emailHelp" placeholder="Phone Number" required oninvalid="this.setCustomValidity('Please Enter 10 digit mobile number')" onchange="this.setCustomValidity('')">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="city_of_property" class="form-control" aria-describedby="emailHelp" placeholder="City of Property" required>
