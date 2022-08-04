@@ -12496,6 +12496,7 @@ html {
 }
 
 #eligibility-2.theme-form {
+    position: relative;
 }
 
 #eligibility-2 .theme-form {
@@ -12565,4 +12566,20 @@ html {
     #eligibility-2 .theme-form {
         border: 0px solid;
     }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    display: none;
+    margin: auto;
+    left: 0;
+    right: 0;
 }
